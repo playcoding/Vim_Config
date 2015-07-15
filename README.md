@@ -4,10 +4,7 @@
 
 ### 安装 Brew for Mac
 
-Brew 是 Mac 下面的包管理工具，通过 Github 托管适合 Mac 的编译配置以及Patch，可以方便的安装开发工具。
-Mac 自带 ruby 所以安装起来很方便，同时它也会自动安装 git 。官方网站：http://brew.sh 。
-
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+参考 “Mac开发终端配置（一）Homebrew安装教程”
 
 ### 安装 Vim for Mac
 
