@@ -16,13 +16,13 @@ set autowrite                                      " 自动保存文件
 set history=1000                                   " 设置历史记录条数
 " set cursorline                                   " 突出显示当前行
 " set cursorcolumn                                 " 突出显示当前列
-" set ignorecase                                     " 设置搜索时忽略大小写
+set ignorecase                                     " 设置搜索时忽略大小写
 
 " set wrap                                         " 当一行文字很长时换行显示
 set nowrap                                         " 当一行文字很长时不换行显示
-set nobackup                                       " 设置取消备份
-set noswapfile                                     " 禁止临时文件生成
-set autochdir                                      " 自动切换当前目录为当前文件所在的目录"
+" set nobackup                                     " 设置取消备份
+" set noswapfile                                   " 禁止临时文件生成
+set autochdir                                      " 自动切换当前目录为当前编辑文件所在的目录
 "
 set showcmd                                        " 输入的命令在底部状态栏右下角显示出来
 set tabstop=4                                      " 设置Tab宽度
