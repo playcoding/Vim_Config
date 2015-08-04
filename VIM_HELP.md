@@ -229,13 +229,15 @@ A, 输入字符串，按 ESC。
     <Leader>fu
     <Leader>fU
 
-### 配置文件`[~/.vim/config/plugin.vim]`
+### 配置文件`[~/.vim/config/plugin/ctrlsf.vim]`
 
     CtrlSF（使 ag/ack 的搜索显示多行搜索结果）
     <Ctrl-f>f
     <Ctrl-f>n
     <Ctrl-f>p
     <Ctrl-f>o
+
+### 配置文件`[~/.vim/config/plugin/vim-easymotion.vim]`
 
     vim-easymotion（快速搜索／跳转插件）
     <Leader><Leader>w
@@ -245,14 +247,22 @@ A, 输入字符串，按 ESC。
     /
     s
 
+### 配置文件`[~/.vim/config/plugin/nerdtree.vim]`
+
     Nerdtree（显示目录树与加强功能的插件）
     <F8>
-    
+
+### 配置文件`[~/.vim/config/plugin/vim-multiple-cursors.vim]`
+
     vim-multiple-cursors（同时选择多个文本）
     <F6>
     
+### 配置文件`[~/.vim/config/plugin/vim-indent-guides]`
+    
     vim-indent-guides（显示缩进对齐线）
     <Leader>si
+
+### 配置文件`[~/.vim/config/plugin/vim-surround.vim]`
 
     vim-surround（字符串包围／改变或者去除引号）
       ysiw"   当前光标所在的单词包围上双引号
@@ -265,8 +275,13 @@ A, 输入字符串，按 ESC。
       ds"     是去除双引号包围
       dst     是删除 <div> 这种类型的包围
       
+### 配置文件`[~/.vim/config/plugin/goyo.vim]`
+
     Goyo（全屏写作）
     <Leader>z
+    
+
+### 配置文件`[~/.vim/config/plugin/vim-airline.vim]`
 
     vim-airline（底部信息栏增强显示） 
     <Leader>1
@@ -279,9 +294,13 @@ A, 输入字符串，按 ESC。
     <Leader>8
     <Leader>9
 
+### 配置文件`[~/.vim/config/plugin/gundo.vim]`
+
     gundo（编辑文件时可以恢复到任意修改点）
     <F5>
     
+### 配置文件`[~/.vim/config/plugin.vim]`
+
     tabular（让代码以=或其它符号对齐）
     <Leader>a&
     <Leader>a&
@@ -489,10 +508,10 @@ vim-easymotion 默认的快捷键：
 输入 `<Leader>j` 或 `<Leader>k` 后输入下面行首出现的红色字母快速跳转到红色字母所在行
 
 代替 Vim 的 / 搜索功能：
-在 NORMAL 模式下输入 / 后输入要搜索的关键词后按回车，按 n 或 N 键跳转到上一个或下一个搜索的关键词
+在 NORMAL 模式下输入 `/` 后输入要搜索的关键词后按回车，按 `n` 或 `N` 键跳转到上一个或下一个搜索的关键词
 
 通过一个或两个字符进行搜索跳转
-按 s 后输入一个或两个要跳转位置的字符，按红色字母跳转到红色字母所在位置，按 t 跳转到前一个字符
+按 `s` 后输入一个或两个要跳转位置的字符，按红色字母跳转到红色字母所在位置，按 `t` 跳转到前一个字符
 
 ### Nerdtree（显示目录树与加强功能的插件）
 
@@ -625,7 +644,6 @@ cursor quit key=`<Esc>`
 > Less 语法与转换成 Css 文件的插件
 
     <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>            
-
 ### vim-easy-align（快速对齐）
 
 > 按照空格、＝号、:号快速自动对齐的插件
@@ -638,13 +656,13 @@ cursor quit key=`<Esc>`
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 `ga <Plug>(EasyAlign)`
 
-emmet-vim（快速写Html、Css代码）
+### emmet-vim（快速写Html、Css代码）
 
 > 快速写Html、Css代码的插件
 
 插件使用说明：
 
-编辑一个 .html 文件，输入 html:5 后 按 `Ctrl ＋Y`  然后输入 `Leader` 键
+编辑一个 .html 文件，输入 html:5 后 按 `Ctrl＋y`  然后输入 `Leader` 键
 
 ### nerdcommenter（添加软件注释）
 
