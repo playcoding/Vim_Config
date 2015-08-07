@@ -6,7 +6,7 @@ Plugin 'scrooloose/nerdtree'
 "
 " 插件配置：
 " 设置 打开／关闭 目录树的快捷键
-map <F8> :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 
 "---------------------------------------------------------------------------------------------------
 "
@@ -14,7 +14,7 @@ map <F8> :NERDTreeToggle<CR>
 Plugin 'jistr/vim-nerdtree-tabs'
 "
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
-    map <F8> <plug>NERDTreeTabsToggle<CR>
+    map <F2> <plug>NERDTreeTabsToggle<CR>
     map <leader>ntf :NERDTreeFind<CR>
     nmap <leader>ntf :NERDTreeFind<CR>
 
