@@ -11,7 +11,7 @@ call vundle#begin()
 " 使用Vundle来管理它自己
 "
 " 安装 Vundle 插件：
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 "
 " 插件使用说明：
 " 可以在 Vim Ex 模式下执行的Vundle命令
