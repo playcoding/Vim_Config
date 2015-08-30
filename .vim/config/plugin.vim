@@ -356,11 +356,21 @@ Plugin 'scrooloose/nerdcommenter'
 " [count]<leader>cu |NERDComUncommentLine|
 "
 "-------------------------------------------------------------------------------------------------------------
+"
+" YouCompleteMe
+" 自动补全插件
+"
+" 插件安装与配置
+source ~/.vim/config/plugin/youcompleteme.vim
+"
 "-------------------------------------------------------------------------------------------------------------
 "
 " 下面的插件自动生效，不需要配置与调用
 "
 "-------------------------------------------------------------------------------------------------------------
+"
+" YouCompleteMe 通过 jedi插件来补全Python
+Plugin 'davidhalter/jedi'
 "
 " 自动检测打开文件的编码的插件
 Plugin 's3rvac/AutoFenc'
@@ -379,12 +389,15 @@ Plugin 'lilydjwg/colorizer'
 
 " 编译 CoffeeScript 为 JavaScript 的插件
 Plugin 'kchmck/vim-coffee-script'
-
-" 源码提示插件
-" Plugin 'Valloric/YouCompleteMe'
 "
 " 建立一个关键词列表进行索引跳转的插件
 Plugin 'vim-scripts/TaskList.vim'
+
+" Adds Swift support to vim. It covers syntax, intenting, and more.
+Plugin 'toyamarinyon/vim-swift'
+
+" 在C语言头文件和源代码之间跳转
+Plugin 'vim-scripts/a.vim'
 "
 "-------------------------------------------------------------------------------------------------------------
 "
