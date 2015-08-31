@@ -1,5 +1,7 @@
 # Vim 及插件安装手册
 
+@(我的 Evernote)[subversion][svn]
+
 ## 安装 Vim
 
 ### 安装 Brew for Mac
@@ -40,11 +42,7 @@
 
 编译Vim之前，需要下载编译的相关工具和一些库
 
-	sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev 
-	                     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev
-	                     libx11-dev libxpm-dev libxt-dev python-dev ruby-dev 
-	                     mercurial texinfo git subversion build-essential
-
+	sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial texinfo git subversion build-essential
 
 > YouCompleteMe 插件需要 cmake 2.8.11 以上版本，最好安装最新的版本。
 
@@ -109,11 +107,13 @@
 
 设置Vim源码的编译属性
 
-	./configure --with-features=huge --enable-rubyinterp --enable-pythoninterp
-	            --with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu/
-	            --enable-perlinterp --enable-gui=gtk2 --enable-cscope 
-	            --enable-luainterp --enable-perlinterp --enable-multibyte
+	./configure --with-features=huge --enable-rubyinterp
+	            --enable-pythoninterp       
+	            --enable-perlinterp --enable-gui=gtk2
+	            --enable-cscope --enable-luainterp
+	            --enable-perlinterp --enable-multibyte
 	            --prefix=/usr
+	            --with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu/ 
 
 需要重新配置可 输入 make distclean #清理一下上一次编译生成的所有文件
 
@@ -127,8 +127,8 @@
 	--enable-multibyte：多字节支持 可以在Vim中输入中文
 	--enable-cscope：Vim对cscope支持
 	--enable-gui=gtk2：gtk2支持,也可以使用gnome，表示生成gvim
-	--with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu/ 指定 python 路径
 	--prefix=/usr：编译安装路径
+	--with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu/ 指定 python 路径
 
 	sudo make VIMRUNTIMEDIR=/usr/share/vim/vim74
 
@@ -328,7 +328,7 @@ Vundle 是 Vim 的插件管理工具，可以通过一个命令自动安装、�
 
 显示为升级之后的版本，接下来就可以放心使用-std=c++11命令了。  
 
-- LLVM、clang 源码安装:
+- **LLVM、clang 源码安装:**
 
 		mkdir ~/llvm-clang
     
@@ -454,7 +454,7 @@ LLVM、Clang 的安装目录为
 
 
 
-- LLVM、clang 二进制安装
+- **LLVM、clang 二进制安装**
 
 到 www.llvm.org 下载最新的 clang Pre-built Binaries包
 
@@ -467,32 +467,34 @@ LLVM、Clang 的安装目录为
 	sudo mv 上面解压出的目录 ~/llvm_temp     // 目录改名
 
 
-安装配置YouCompleteMe
+- **安装配置YouCompleteMe**
 
  
- Ubuntu Linux
+ ***Ubuntu Linux***
  
  	首先用文章起始的方法安装最新版本的 cmake
  	
- 	sudo apt-get install python-dev
+ 	    sudo apt-get install python-dev
  
- Mac
+ ***Mac***
  	
- 	brew install cmake      // Mac 系统 brew 安装 cmake 是最新版本
+ 	    brew install cmake      // Mac 系统 brew 安装 cmake 是最新版本
 
-	安装 python-dev          // Mac下默认提供，否则请安装command line tools
+	> 安装 python-dev          // Mac下默认提供，否则请安装command line tools
  	
     
 
-1. 使用vundle，在vimrc文件中加入（推荐使用下面的编号2.手动编译安装） 
+- 使用vundle，在vimrc文件中加入（推荐使用下面的编号2.手动编译安装） 
 
-	    Plugin 'Valloric/YouCompleteMe'  //配置文件中是默认注释掉未生效的状态，手动打开
+	        Plugin 'Valloric/YouCompleteMe'
+	        //配置文件中是默认注释掉未生效的状态，手动打开
 	
-	    :PluginInstall                   // 在 Vim 的 EX 扩展模式输入命令自动安装
+	        :PluginInstall                   
+	        // 在 Vim 的 EX 扩展模式输入命令自动安装
 	    
    等待vundle将YouCompleteMe安装完成后进行编译安装：
    
-   > 下面的方法只部分适应于 Linux 与 Mac，有时候会安装失败，推荐使用下面的方法2.手动编译安装，如果使用的是源代码编译安装的 LLVM 与 Clang 则必须使用 方法2.手动编译安装
+   > **下面的方法只部分适应于 Linux 与 Mac，有时候会安装失败，推荐使用下面的方法2.手动编译安装，如果使用的是源代码编译安装的 LLVM 与 Clang 则必须使用 方法2.手动编译安装**
 
 	    cd ~/.vim/bundle/YouCompleteMe  
 	    
@@ -504,7 +506,7 @@ LLVM、Clang 的安装目录为
    YCM会去下载clang的包，用系统clang的包 --system-libclang。
    打开vim，如果没有提示YCM未编译，则说明安装已经成功了。	    
 	    
-2. 手动编译安装（此插件容量较大，推荐使用此方式，因为此方式下载时有百分比进度）
+- 手动编译安装（此插件容量较大，推荐使用此方式，因为此方式下载时有百分比进度）
 
         cd ~/.vim/bundle
 
@@ -549,7 +551,8 @@ LLVM、Clang 的安装目录为
 
 **llvm、clang 二进制包使用下面的命令：** (支持 Ubuntu 14.04 与 Mac、不支持 Ubuntu 12.04)
 
-> Mac 系统下面的参数要改成 -DEXTERNAL_LIBCLANG_PATH=/path/to/libclang.dylib
+> Mac 系统下面的参数 `.so` 要改成 `.dylib`
+-DEXTERNAL_LIBCLANG_PATH=/path/to/libclang.dylib
    
     sudo cmake -G "Unix Makefiles" -DUSE_SYSTEM_BOOST=ON -DPATH_TO_LLVM_ROOT=~/llvm_temp/ . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
     
