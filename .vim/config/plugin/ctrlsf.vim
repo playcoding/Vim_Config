@@ -8,6 +8,9 @@ Plugin 'dyng/ctrlsf.vim'
 let g:ctrlsf_ackprg = 'ag'
 "
 " 输入后在底部 Ex 命令行出现 :CtrlSF 后输入搜索关键词按回车键搜索
+" 如果不输入任何关键词直接按回车键，将自动提取光标所在关键字进行查找，你也可以指定 ack 的选项
+" 例 ':CtrlSF -i -C 1 [pattern] /my/path/]'
+"
 nmap     <C-F>f <Plug>CtrlSFPrompt
 "
 " 在 VISUAL 模式选择一个词语后自动添加到搜索内容的位置

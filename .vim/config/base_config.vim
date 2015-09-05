@@ -14,8 +14,10 @@ set showmatch                                      " 设置匹配模式,当输�
 set autoread                                       " 文件在外部被其它程序修改后,VIM自动读入修改
 set autowrite                                      " 自动保存文件
 set history=1000                                   " 设置历史记录条数
-" set cursorline                                   " 突出显示当前行
-" set cursorcolumn                                 " 突出显示当前列
+
+set ruler                                          " 在右下角显示光标当前位置的坐标
+set cursorline                                     " 突出显示当前行
+set cursorcolumn                                   " 突出显示当前列
 set ignorecase                                     " 设置搜索时忽略大小写
 
 " set wrap                                         " 当一行文字很长时换行显示
@@ -32,7 +34,21 @@ set smarttab                                       " 设置按退格键时可以
 set expandtab                                      " 将Tab键自动转换成空格 真正需要Tab键时使用[Ctrl + V + Tab]
 " set noexpandtab                                  " 不将Tab键自动转换成空格
 "
-setl foldlevelstart=99                             " 总是关闭所有的折叠 (0) 关闭某些折叠 (1) 或者没有折叠 (99)
+" // expandtab，把制表符转换为多个空格，具体空格数量参考 tabstop 和 shiftwidth 变量；
+" // tabstop 与 shiftwidth 是有区别的。tabstop 指定我们在插入模式下输入一个制表符占据的空格数量，
+" linux 内核编码规范建议是 8，看个人需要；shiftwidth 指定在进行缩进格式化源码时制表符占据的空格数。
+" 所谓缩进格式化，指的是通过 vim 命令由 vim 自动对源码进行缩进处理，比如其他人的代码不满足你的缩进要求，
+" 你就可以对其进行缩进格式化。缩进格式化，需要先选中指定行，要么键入 = 让 vim 对该行进行智能缩进格式化，
+" 要么按需键入多次 < 或 > 手工缩进格式化；
+" // softtabstop，如何处理连续多个空格。因为 expandtab 已经把制表符转换为空格，当你要删除制表符时你得连续删除多个空格，
+" 该设置就是告诉 vim 把连续数量的空格视为一个制表符，即，只删一个字符即可。通常应将这tabstop、shiftwidth、softtabstop 三个变量设置为相同值；
+"
+"
+" set foldenable                                   " 启动 vim 时折叠所有代码段
+set nofoldenable                                   " 启动 vim 时不折叠所有代码段
+" setl foldlevelstart=99                           " 总是关闭所有的折叠 (0) 关闭某些折叠 (1) 或者没有折叠 (99)
+set foldmethod=indent                              " 基于缩进进行代码折叠
+" set foldmethod=syntax                            " 基于语法进行代码折叠
 "
 set nrformats-=octal                               " 在 007 这类以 0 开头的数字上使用 CTRL-A 进行增长时，不以八进制处理而是当十进制处理
 "
@@ -101,6 +117,15 @@ set viminfo='1000,f1,<1000,:500,@500,/500
 " n 用于 viminfo 文件的名称 (必须为最后一项选项)
 "
 "-------------------------------------------------------------------------------------------------------------
+
+" jQuery的配色支持,把jquery.vim放到vimfiles\syntax目录，js 文件编辑时使用jquery 配色
+au BufRead,BufNewFile *.js set ft=javascript syntax=jquery
+"
+"
+"-------------------------------------------------------------------------------------------------------------
+"
+"
+"
 "
 " End 其他配置
 "

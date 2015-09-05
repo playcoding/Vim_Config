@@ -18,8 +18,6 @@
 Plugin 'bling/vim-airline'
 
 " 插件配置
-set laststatus=2                                   " 底部状态栏显示两行
-set t_Co=256                                       " 指定配色方案为256色
 
 " 使用 powerline 符号，需要安装 powerline 字体
 let g:airline_powerline_fonts = 1

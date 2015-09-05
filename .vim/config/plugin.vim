@@ -197,6 +197,12 @@ Plugin 'https://github.com/sjl/gundo.vim'
 " 插件配置：
 " 修改启动此功能的快捷键
 nnoremap <F5> :GundoToggle<CR>
+
+" 开启保存 undo 历史功能,使退出后下次编辑文件还能使用,必须设置下面的历史保存路径
+set undofile
+
+" undo 历史保存路径
+set undodir=~/.vim/vimdata/undo_history/
 "
 "-------------------------------------------------------------------------------------------------------------
 "
@@ -363,6 +369,37 @@ Plugin 'scrooloose/nerdcommenter'
 " 插件安装与配置
 source ~/.vim/config/plugin/youcompleteme.vim
 "
+"
+"-------------------------------------------------------------------------------------------------------------
+"
+" vim-signature
+" 书签可视化的插件
+"
+" 插件安装与配置
+source ~/.vim/config/plugin/vim-signature.vim
+"
+"-------------------------------------------------------------------------------------------------------------
+"
+" a.vim
+" 在C语言头文件和源代码之间跳转
+"
+" 插件安装：
+Plugin 'vim-scripts/a.vim'
+"
+" 插件配置：
+" *.cpp 和 *.h 间切换
+nmap <Leader>ch :A<CR>
+" 子窗口中显示 *.cpp 或 *.h
+nmap <Leader>sch :AS<CR>
+
+"-------------------------------------------------------------------------------------------------------------
+"
+" indexer.vim
+" 根据编辑的文件自动生成与更新ctags文件
+"
+" 插件安装与配置
+source ~/.vim/config/plugin/indexer.vim
+"
 "-------------------------------------------------------------------------------------------------------------
 "
 " 下面的插件自动生效，不需要配置与调用
@@ -396,8 +433,8 @@ Plugin 'vim-scripts/TaskList.vim'
 " Adds Swift support to vim. It covers syntax, intenting, and more.
 Plugin 'toyamarinyon/vim-swift'
 
-" 在C语言头文件和源代码之间跳转
-Plugin 'vim-scripts/a.vim'
+" STL、C++14 新增元素语法高亮
+Plugin 'Mizuchi/STL-Syntax'
 "
 "-------------------------------------------------------------------------------------------------------------
 "
@@ -405,6 +442,17 @@ Plugin 'vim-scripts/a.vim'
 "
 call vundle#end()
 "
-filetype plugin indent on                          " 文件检测类型与文件缩进，Vundle 必需配置
-syntax enable                                      " 语法高亮显示
+" 开启文件类型侦测
+filetype on
+
+" 根据侦测到的不同类型加载对应的插件与文件缩进，Vundle 必需配置
+filetype plugin on
 "
+" 自适应不同语言的智能缩进
+filetype indent on
+
+" 开启语法高亮功能
+syntax enable
+
+" 允许用指定语法高亮配色方案替换默认方案
+syntax on
