@@ -292,26 +292,11 @@ set regexpengine=1
 
 "-------------------------------------------------------------------------------------------------------------
 "
+" emmet-vim
 " 快速写Html、Css代码的插件
 "
-" 插件安装：
-Plugin 'mattn/emmet-vim'
-
-" 插件配置：
-"
-let g:user_emmet_mode='n'    "only enable normal mode functions.
-let g:user_emmet_mode='inv'  "enable all functions, which is equal to
-let g:user_emmet_mode='a'    "enable all function in all mode.
-
-" let g:emmet_html5 = 0
-
-" 此插件只有在html、css文件生效
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-"
-" 更改触发键:
-" let g:user_emmet_leader_key='<C-Y>'
-" let g:user_emmet_expandabbr_key='<Leader>'
+" 插件安装与配置
+source ~/.vim/config/plugin/emmet-vim.vim
 "
 "-------------------------------------------------------------------------------------------------------------
 "
@@ -399,6 +384,14 @@ nmap <Leader>sch :AS<CR>
 "
 " 插件安装与配置
 source ~/.vim/config/plugin/indexer.vim
+"
+"-------------------------------------------------------------------------------------------------------------
+"
+" indexer.vim
+" 根据编辑的文件自动生成与更新ctags文件
+"
+" 插件安装与配置
+source ~/.vim/config/plugin/ultisnips.vim
 "
 "-------------------------------------------------------------------------------------------------------------
 "
