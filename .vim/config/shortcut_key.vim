@@ -30,14 +30,6 @@ vmap <F10> :g/^\s*$/d<CR>
 "
 "-------------------------------------------------------------------------------------------------------------
 "
-" 窗口切换
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
-"
-"-------------------------------------------------------------------------------------------------------------
-"
 " 在插入模式下 hjkl 移动光标
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
@@ -72,3 +64,61 @@ function! SetColorColumn()
         execute "set cc-=".col_num
     endif
 endfunction
+
+"-------------------------------------------------------------------------------------------------------------
+"
+" 把光标移至待替换字符串上,输入下面的快捷键后,再输入要替换的内容进行查找和替换。
+" 替换函数。参数说明：
+" confirm：是否替换前逐一确认
+" wholeword：是否整词匹配
+" replace：被替换字符串
+function! Replace(confirm, wholeword, replace)
+  wa
+  let flag = ''
+  if a:confirm
+    let flag .= 'gec'
+  else
+    let flag .= 'ge'
+  endif
+  let search = ''
+  if a:wholeword
+    let search .= '\<' . escape(expand('<cword>'), '/\.*$^~[') . '\>'
+  else
+    let search .= expand('<cword>')
+  endif
+  let replace = escape(a:replace, '/\&~')
+  execute 'argdo %s/' . search . '/' . replace . '/' . flag . '| update'
+endfunction
+" 不确认、非整词
+nnoremap <Leader>R :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
+" 不确认、整词
+nnoremap <Leader>rw :call Replace(0, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+" 确认、非整词
+nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' with: '))<CR>
+" 确认、整词
+nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
+
+"-------------------------------------------------------------------------------------------------------------
+"
+" 定义快捷键到行首和行尾
+
+nmap lb 0
+nmap le $
+"
+"-------------------------------------------------------------------------------------------------------------
+"
+" 窗口切换
+"
+" 依次遍历子窗口
+nnoremap <Leader>nw <C-W><C-W>
+" 跳转至右方的窗口
+nnoremap <Leader>lw <C-W>l<C-W>_
+" 跳转至左方的窗口
+nnoremap <Leader>hw <C-W>h<C-W>_
+" 跳转至上方的子窗口
+nnoremap <Leader>kw <C-W>k<C-W>_
+" 跳转至下方的子窗口
+nnoremap <Leader>jw <C-W>j<C-W>_
+"
+"-------------------------------------------------------------------------------------------------------------
