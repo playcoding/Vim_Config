@@ -352,7 +352,7 @@ Plugin 'scrooloose/nerdcommenter'
 " 自动补全插件
 "
 " 插件安装与配置
-source ~/.vim/config/plugin/youcompleteme.vim
+" source ~/.vim/config/plugin/youcompleteme.vim
 "
 "
 "-------------------------------------------------------------------------------------------------------------
@@ -383,7 +383,7 @@ nmap <Leader>sch :AS<CR>
 " 根据编辑的文件自动生成与更新ctags文件
 "
 " 插件安装与配置
-source ~/.vim/config/plugin/indexer.vim
+" source ~/.vim/config/plugin/indexer.vim
 "
 "-------------------------------------------------------------------------------------------------------------
 "
