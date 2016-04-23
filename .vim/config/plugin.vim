@@ -263,7 +263,7 @@ augroup END
 " Less 语法与转换成 Css 文件的插件
 Plugin 'groenewege/vim-less'
 
-nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+nnoremap <Leader>less :w <BAR> !lessc % > %:t:r.css<CR><space>
 "
 "-------------------------------------------------------------------------------------------------------------
 "
@@ -286,10 +286,7 @@ nmap ga <Plug>(EasyAlign)
 "
 " 插件安装
 Plugin 'Pangloss/vim-javascript'
-
-" 插件配置
-set regexpengine=1
-
+"
 "-------------------------------------------------------------------------------------------------------------
 "
 " emmet-vim
@@ -387,8 +384,8 @@ nmap <Leader>sch :AS<CR>
 "
 "-------------------------------------------------------------------------------------------------------------
 "
-" indexer.vim
-" 根据编辑的文件自动生成与更新ctags文件
+" ultisnips.vim
+" 代码块输入插件
 "
 " 插件安装与配置
 source ~/.vim/config/plugin/ultisnips.vim
@@ -400,7 +397,7 @@ source ~/.vim/config/plugin/ultisnips.vim
 "-------------------------------------------------------------------------------------------------------------
 "
 " YouCompleteMe 通过 jedi插件来补全Python
-Plugin 'davidhalter/jedi'
+" Plugin 'davidhalter/jedi'
 "
 " 自动检测打开文件的编码的插件
 Plugin 's3rvac/AutoFenc'
@@ -427,7 +424,7 @@ Plugin 'vim-scripts/TaskList.vim'
 Plugin 'toyamarinyon/vim-swift'
 
 " STL、C++14 新增元素语法高亮
-Plugin 'Mizuchi/STL-Syntax'
+" Plugin 'Mizuchi/STL-Syntax'
 "
 "-------------------------------------------------------------------------------------------------------------
 "
