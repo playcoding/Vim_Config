@@ -349,8 +349,15 @@ Plugin 'scrooloose/nerdcommenter'
 " 自动补全插件
 "
 " 插件安装与配置
-" source ~/.vim/config/plugin/youcompleteme.vim
+source ~/.vim/config/plugin/youcompleteme.vim
 "
+"-------------------------------------------------------------------------------------------------------------
+"
+" tern_for_vim
+" 搭配 YouCompleteMe 使用的补全 javascript 语法插件
+"
+" 插件安装与配置
+source ~/.vim/config/plugin/tern_for_vim.vim
 "
 "-------------------------------------------------------------------------------------------------------------
 "
@@ -388,7 +395,7 @@ nmap <Leader>sch :AS<CR>
 " 代码块输入插件
 "
 " 插件安装与配置
-source ~/.vim/config/plugin/ultisnips.vim
+" source ~/.vim/config/plugin/ultisnips.vim
 "
 "-------------------------------------------------------------------------------------------------------------
 "
@@ -397,7 +404,7 @@ source ~/.vim/config/plugin/ultisnips.vim
 "-------------------------------------------------------------------------------------------------------------
 "
 " YouCompleteMe 通过 jedi插件来补全Python
-" Plugin 'davidhalter/jedi'
+Plugin 'davidhalter/jedi'
 "
 " 自动检测打开文件的编码的插件
 Plugin 's3rvac/AutoFenc'
