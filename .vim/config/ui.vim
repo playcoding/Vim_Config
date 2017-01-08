@@ -45,7 +45,7 @@ if has("gui_gtk2")
 elseif has("gui_macvim")
     set guifont=Sauce_Code_Powerline:h14            " Mac 下终端 Vim 界面使用的字体
 elseif has("gui_win32")
-    set guifont=Sauce_Code_Powerline:h11            " Windows 下终端 Vim 界面使用的字体
+    set guifont=Sauce_Code_Powerline:h12            " Windows 下终端 Vim 界面使用的字体
 end
 
 " Ubuntu 终端下Vim标准模式下光标显示成方块，插入模式下光标显示成竖线
