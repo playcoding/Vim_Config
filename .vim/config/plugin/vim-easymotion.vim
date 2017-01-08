@@ -6,7 +6,8 @@ Plugin 'Lokaltog/vim-easymotion'
 "
 " 插件配置：
 " 禁止使用默认的快捷键
-" let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_do_mapping = 0
+"
 " 搜索时忽略大小写
 let g:EasyMotion_smartcase = 1
 "
