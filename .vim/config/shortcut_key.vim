@@ -54,7 +54,7 @@ nmap <Leader>tp :tprevious<CR>
 "-------------------------------------------------------------------------------------------------------------
 
 " 将当前光标下的列高亮并锁定，再按一次，取消高亮；并且可以同时多列高亮
-map <Leader>sc :call SetColorColumn()<CR>
+map <Leader>hc :call SetColorColumn()<CR>
 function! SetColorColumn()
     let col_num = virtcol(".")
     let cc_list = split(&cc, ',')
@@ -101,24 +101,18 @@ nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' wi
 
 "-------------------------------------------------------------------------------------------------------------
 "
-" 定义快捷键到行首和行尾
-
-nmap lb 0
-nmap le $
-"
-"-------------------------------------------------------------------------------------------------------------
-"
 " 窗口切换
 "
 " 依次遍历子窗口
 nnoremap <Leader>nw <C-W><C-W>
 " 跳转至右方的窗口
-nnoremap <Leader>lw <C-W>l<C-W>_
+nnoremap <Leader>rw <C-W>l<C-W>_
 " 跳转至左方的窗口
-nnoremap <Leader>hw <C-W>h<C-W>_
+nnoremap <Leader>lw <C-W>h<C-W>_
 " 跳转至上方的子窗口
-nnoremap <Leader>kw <C-W>k<C-W>_
+nnoremap <Leader>uw <C-W>k<C-W>_
 " 跳转至下方的子窗口
-nnoremap <Leader>jw <C-W>j<C-W>_
+nnoremap <Leader>dw <C-W>j<C-W>_
 "
 "-------------------------------------------------------------------------------------------------------------
+"
