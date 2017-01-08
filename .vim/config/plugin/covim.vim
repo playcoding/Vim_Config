@@ -5,8 +5,8 @@ Plugin 'FredKSchott/CoVim'
 
 " 插件配置
 " 设置建立服务时使用的用户名与使用的端口
-let CoVim_default_name = "Will"
-let CoVim_default_port = "8000"
+" let CoVim_default_name = "Will"
+" let CoVim_default_port = "8000"
 
 " 使用方法：
 " To start a new CoVim server: :CoVim start [port] [name] (or, from the command line: ./CoVimServer.py [port])
